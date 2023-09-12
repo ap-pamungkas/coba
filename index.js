@@ -27,7 +27,7 @@ function separate(arr) {
 
  
 
-let calculate=(inputArr)=>{
+let calculateGenap=(inputArr)=>{
   let minArr = inputArr[0];
   let maxArr = inputArr[0];
 
@@ -54,6 +54,33 @@ let calculate=(inputArr)=>{
  
 
 }
+let calculateGanjil=(inputArr)=>{
+  let minArrGanjil = inputArr[0];
+  let maxArrGanjil = inputArr[0];
+
+  for(let i= 0; i<inputArr.length; i++){
+    if( inputArr[i]<minArrGanjil ){
+       minArrGanjil = inputArr[i];
+    }else if(inputArr[i]> maxArrGanjil ){
+      maxArrGanjil = inputArr[i]
+    
+       }
+  }
+
+  let totalGanjil = inputArr[0]
+  for(let i = 0 ; i < inputArr.length; i++){
+    totalGanjil += inputArr[i]
+  }
+
+  const rataRata= total
+
+  let resultGanjil = rataRata / inputArr.length;
+
+  return  {minArrGanjil, maxArrGanjil, totalGanjil, resultGanjil}
+
+ 
+
+}
 
 
 
@@ -62,7 +89,10 @@ let calculate=(inputArr)=>{
 const arr100 = valueRandom(100);
 const [evenValue, oddValue] = separate(arr100);
 
-const {minArr, maxArr, total, result}= calculate(evenValue)
+let {minArr, maxArr, total, result}= calculateGenap(evenValue)
+let {minArrGanjil, maxArrGanjil, totalGanjil, resultGanjil}= calculateGanjil(oddValue)
+
+
 
 
 
@@ -75,6 +105,10 @@ console.log(minArr);
 console.log(maxArr);
 console.log(total);
 console.log(result);
+console.log(minArrGanjil);
+console.log(maxArrGanjil);
+console.log(totalGanjil);
+console.log(resultGanjil);
 
 
 
