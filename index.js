@@ -40,7 +40,18 @@ let calculate=(inputArr)=>{
        }
   }
 
-  return  {minArr, maxArr}
+  let total = inputArr[0]
+  for(let i = 0 ; i < inputArr.length; i++){
+    total += inputArr[i]
+  }
+
+  const rataRata= total
+
+  let result = rataRata / inputArr.length;
+
+  return  {minArr, maxArr, total, result}
+
+ 
 
 }
 
@@ -51,7 +62,7 @@ let calculate=(inputArr)=>{
 const arr100 = valueRandom(100);
 const [evenValue, oddValue] = separate(arr100);
 
-const {minArr, maxArr}= calculate(evenValue)
+const {minArr, maxArr, total, result}= calculate(evenValue)
 
 
 
@@ -62,6 +73,8 @@ console.log(`ini adalah angka genap `,evenValue)
 console.log(`ini adalah angka ganjil`,oddValue)
 console.log(minArr);
 console.log(maxArr);
+console.log(total);
+console.log(result);
 
 
 
